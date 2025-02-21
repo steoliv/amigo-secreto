@@ -23,3 +23,9 @@ function exibirAmigos(){
     let exibirListaAmigos = document.querySelector('.name-list');
     exibirListaAmigos.innerHTML = listaDeAmigos;
 }
+
+//Função para sortear amigo
+function sortearAmigo(){
+    let sorteado = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
+    console.log(sorteado);
+}
