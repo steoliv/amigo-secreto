@@ -5,8 +5,6 @@ function adicionarAmigo(){
     let nomeAmigo = document.querySelector('.input-name').value;
     listaDeAmigos.push(nomeAmigo);
 
-    console.log(listaDeAmigos);
-
     limparInput();
     exibirAmigos();
 }
@@ -20,7 +18,10 @@ function limparInput(){
 //Função para exibir os nomes no front
 function exibirAmigos(){
     let exibirListaAmigos = document.querySelector('.name-list');
-    exibirListaAmigos.innerHTML = listaDeAmigos;
+    let itensDaListaDeAmigos = listaDeAmigos.map((element) => { return   '<ol>' +  element + '</ol>'});
+    exibirListaAmigos.innerHTML = itensDaListaDeAmigos.join("");
+
+    // let html = dados . map((element) => { return '<h2>' + element.title + '</h2><ul>' + element.items.map(item => '<li>' + item + '</li>').join('') + '</ul>'; }) .join('');
 }
 
 //Função para sortear amigo
