@@ -20,8 +20,6 @@ function exibirAmigos(){
     let exibirListaAmigos = document.querySelector('.name-list');
     let itensDaListaDeAmigos = listaDeAmigos.map((element) => { return   '<ol>' +  element + '</ol>'});
     exibirListaAmigos.innerHTML = itensDaListaDeAmigos.join("");
-
-    // let html = dados . map((element) => { return '<h2>' + element.title + '</h2><ul>' + element.items.map(item => '<li>' + item + '</li>').join('') + '</ul>'; }) .join('');
 }
 
 //Função para sortear amigo
@@ -34,6 +32,8 @@ function sortearAmigo(){
         if(listaDeAmigos.includes(sorteado)){
             listaDeAmigos.splice(listaDeAmigos.indexOf(sorteado), 1);
             exibirSorteado.innerHTML = `O nome do seu amigo secreto é ${sorteado}`;
+        }else{
+            exibirSorteado.innerHTML = 'TODOS OS NOMES FORAM SORTEADOS';
         }
         break;
     }
