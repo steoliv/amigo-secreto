@@ -2,6 +2,7 @@ let listaDeAmigos =[];
 
 //Função para cadastrar amigos na lista
 function adicionarAmigo(){
+    document.querySelector(".result-list").innerHTML ='';
     let nomeAmigo = document.querySelector('.input-name').value;
     listaDeAmigos.push(nomeAmigo);
 
@@ -34,8 +35,15 @@ function sortearAmigo(){
             exibirSorteado.innerHTML = `O nome do seu amigo secreto é ${sorteado}`;
         }else{
             exibirSorteado.innerHTML = 'TODOS OS NOMES FORAM SORTEADOS';
+            limparLista();
         }
         break;
     }
 
+}
+
+// Função para Limpar listar e poder realizar novo sorteio
+function limparLista(){
+    listaDeAmigos = [];
+    document.querySelector('.name-list').innerHTML = '';
 }
