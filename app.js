@@ -5,8 +5,6 @@ function adicionarAmigo(){
     let nomeAmigo = document.querySelector('.input-name').value;
     listaDeAmigos.push(nomeAmigo);
 
-    console.log(listaDeAmigos);
-
     limparInput();
     exibirAmigos();
 }
@@ -20,7 +18,8 @@ function limparInput(){
 //Função para exibir os nomes no front
 function exibirAmigos(){
     let exibirListaAmigos = document.querySelector('.name-list');
-    exibirListaAmigos.innerHTML = listaDeAmigos;
+    let itensDaListaDeAmigos = listaDeAmigos.map((element) => { return   '<ol>' +  element + '</ol>'});
+    exibirListaAmigos.innerHTML = itensDaListaDeAmigos.join("");
 }
 
 //Função para sortear amigo
@@ -33,6 +32,8 @@ function sortearAmigo(){
         if(listaDeAmigos.includes(sorteado)){
             listaDeAmigos.splice(listaDeAmigos.indexOf(sorteado), 1);
             exibirSorteado.innerHTML = `O nome do seu amigo secreto é ${sorteado}`;
+        }else{
+            exibirSorteado.innerHTML = 'TODOS OS NOMES FORAM SORTEADOS';
         }
         break;
     }
