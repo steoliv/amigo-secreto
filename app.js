@@ -1,6 +1,5 @@
 let listaDeAmigos =[];
 
-
 //Função para cadastrar amigos na lista
 function adicionarAmigo(){
     let nomeAmigo = document.querySelector('.input-name').value;
@@ -27,5 +26,12 @@ function exibirAmigos(){
 //Função para sortear amigo
 function sortearAmigo(){
     let sorteado = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
-    console.log(sorteado);
+
+    //Loop para não repetir o nome removendo-o da lista
+    for(i=0; i <= listaDeAmigos.length; i++){
+        if(listaDeAmigos.includes(sorteado)){
+            listaDeAmigos.splice(listaDeAmigos.indexOf(sorteado), 1);
+        }
+    }
+
 }
