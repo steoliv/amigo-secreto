@@ -34,6 +34,7 @@ function sortearAmigo(){
             listaDeAmigos.splice(listaDeAmigos.indexOf(sorteado), 1);
             exibirSorteado.innerHTML = `O nome do seu amigo secreto é ${sorteado}`;
         }
+        break;
     }
 
 }
