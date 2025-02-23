@@ -1,5 +1,6 @@
 let listaDeAmigos =[];
 let exibirListaAmigos = document.querySelector('.name-list');
+let exibirSorteado = document.querySelector(".result-list"); 
 
 //Função para cadastrar amigos na lista
 function adicionarAmigo(){
@@ -31,7 +32,6 @@ function exibirAmigos(){
 //Função para sortear amigo
 function sortearAmigo(){
     let sorteado = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
-    let exibirSorteado = document.querySelector(".result-list"); 
 
     //Condição para verificar se a lista não esta vazia
     if(listaDeAmigos.length >= 1){
@@ -47,7 +47,7 @@ function sortearAmigo(){
         }
     }else{
         alert("Você precisa inserir amigos");
-
+        limparLista();
     }
 }
 
@@ -56,4 +56,5 @@ function sortearAmigo(){
 function limparLista(){
     listaDeAmigos = [];
     document.querySelector('.name-list').innerHTML = '';
+    exibirSorteado.innerHTML = '';
 }
