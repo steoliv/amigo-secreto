@@ -3,8 +3,13 @@ let listaDeAmigos =[];
 //Função para cadastrar amigos na lista
 function adicionarAmigo(){
     document.querySelector(".result-list").innerHTML ='';
-    let nomeAmigo = document.querySelector('.input-name').value;
-    listaDeAmigos.push(nomeAmigo);
+    let nomeAmigo = document.querySelector('.input-name');
+
+    if(nomeAmigo.value == ""){
+        alert("Por favor, insira um nome.");
+    }else{
+        listaDeAmigos.push(nomeAmigo.value);
+    }
 
     limparInput();
     exibirAmigos();
